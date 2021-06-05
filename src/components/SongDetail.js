@@ -4,18 +4,31 @@ import { connect } from 'react-redux';
 
 
 
-const SongDetail=props=>{
-console.log(props)
-return(
-<div>
-    SongDetail
-</div>
+const SongDetail = ({ song }) => {
+    if (!song) {
+        return (
+            <h4>
+                please select song
+            </h4>
+        )
+    }
+    return (
+        <div>
+            <h3>detail for song :</h3>
+            <p>
+                title: {song.title}
+            </p>
+            <p>
+                Duration: {song.duration}
+            </p>
 
-)
+        </div>
+
+    )
 };
 
-const mapStoreToProps = (state)=>{
-return { song:state.selectedSong}
+const mapStoreToProps = (state) => {
+    return { song: state.selectedSong }
 };
 
 export default connect(mapStoreToProps)(SongDetail);
