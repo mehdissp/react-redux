@@ -1,5 +1,6 @@
 import React from 'react';
 import { selectedSong } from '../actions'
+import SongDetail from './SongDetail';
 import SongList from './SongList';
 
 
@@ -11,7 +12,9 @@ export default () => {
         <div className="column eight wide">
           <SongList />
         </div>
-
+        <div className="column eight wide">
+          <SongDetail />
+        </div>
       </div>
     </div>
   );
