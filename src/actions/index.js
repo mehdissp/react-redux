@@ -10,6 +10,13 @@ import _ from 'lodash';
 //     }
 // }
 
+export const fetchPostsAndUsers = () => async (dispatch, getState) => {
+  await dispatch(fetchPosts());
+  //console.log(getState().posts);
+  const usersIds=_.uniq(_.map(getState().posts,'userId'));
+  console.log(usersIds)
+}
+
 export const fetchPosts = () => async dispatch => {
   const response = await jsonapi.get('/posts');
   dispatch({
@@ -34,4 +41,8 @@ const _fetchUser=_.memoize(async (id,dispatch)=>{
       payload:response.data
     });
 })
+
+//////////****************************** */
+
+
 
