@@ -10,9 +10,18 @@ import axios from 'axios';
 // }
 
 export const fetchPosts = () => async dispatch => {
-  const respons = await jsonapi.get('/posts');
+  const response = await jsonapi.get('/posts');
   dispatch({
     type: 'FETCH_POSTS',
-    payload: respons.data
+    payload: response.data
   });
 }
+
+export const fetchUser=(id)=> async dispatch=>{
+   const response = await jsonapi.get(`/users/${id}`);
+   dispatch({
+     type:'FETCH_USER',
+     payload:response.data
+   });
+}
+
