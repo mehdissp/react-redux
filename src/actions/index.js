@@ -1,5 +1,6 @@
 import jsonapi from '../apis/jsonapi';
 import axios from 'axios';
+import _ from 'lodash';
 // export const  fetchPosts= async()=>{
 //   const respons=  await axios.get('/posts');
 //   //bad aporch bad design : avoid
@@ -18,10 +19,19 @@ export const fetchPosts = () => async dispatch => {
 }
 
 export const fetchUser=(id)=> async dispatch=>{
-   const response = await jsonapi.get(`/users/${id}`);
-   dispatch({
-     type:'FETCH_USER',
-     payload:response.data
-   });
+  //  const response = await jsonapi.get(`/users/${id}`);
+  //  dispatch({
+  //    type:'FETCH_USER',
+  //    payload:response.data
+  //  });
+  _fetchUser(id,dispatch);
 }
+
+const _fetchUser=_.memoize(async (id,dispatch)=>{
+    const response=await jsonapi.get(`/users/${id}`);
+    dispatch({
+      type:'FETCH_USER',
+      payload:response.data
+    });
+})
 
