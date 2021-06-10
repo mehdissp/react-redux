@@ -10,18 +10,18 @@ const App = () => {
     <>
 
 
-      <MemoryRouter>
+      <BrowserRouter>
         <p>
           <Link to="/about">
             about
-   </Link>
+        </Link>
           <Link to="/">
             home
    </Link>
         </p>
         <Route path="/" exact component={PageOne} />
         <Route path="/about" component={PageTwo} />
-      </MemoryRouter>
+      </BrowserRouter>
     </>
   );
 }
