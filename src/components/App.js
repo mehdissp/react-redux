@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, HashRouter,MemoryRouter } from 'react-router-dom';
 
 
 const PageOne = () => { return <div>page 1</div> }
@@ -10,7 +10,7 @@ const App = () => {
     <>
 
 
-      <BrowserRouter>
+      <MemoryRouter>
         <p>
           <Link to="/about">
             about
@@ -21,7 +21,7 @@ const App = () => {
         </p>
         <Route path="/" exact component={PageOne} />
         <Route path="/about" component={PageTwo} />
-      </BrowserRouter>
+      </MemoryRouter>
     </>
   );
 }
