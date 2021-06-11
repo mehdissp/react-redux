@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import {CreateStore} from 'redux';
+import {createStore} from 'redux';
 
 import App from './components/App';
 import reducers from './reducers';
 
-const store =CreateStore(reducers);
+const store =createStore(reducers);
 
 
 
