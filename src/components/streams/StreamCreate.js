@@ -1,5 +1,8 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux'
+import {createStream} from '../../actions';
+
 
 class StreamCreate extends React.Component {
 
@@ -47,7 +50,7 @@ class StreamCreate extends React.Component {
     render() {
         console.log(this.props)
         return (
-            <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
+            <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)} >
 
                 <Field name="title" component={this.renderInput} label="Title" />
                 <Field name="description" component={this.renderInput} label="Description" />
