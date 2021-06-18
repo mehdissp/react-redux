@@ -65,12 +65,11 @@ class StreamForm extends React.Component {
 const validate = formValues => {
     const errors = {};
     if (!formValues.title) {
-        errors.title = 'errorrrrrr';
+        errors.title = 'title invalid';
 
     } if (!formValues.description) {
-        errors.description = 'e222222222222222'
+        errors.description = 'decription invalid'
     }
-    console.log(formValues);
     return errors;
 };
 export default reduxForm({

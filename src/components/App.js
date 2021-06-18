@@ -10,6 +10,11 @@ import StreamShow from './streams/StreamShow';
 import Header from '../components/Header';
 import history from '../history'
 
+/***
+ * with react router each component
+ * needs to be designed to work in isolation
+ */
+
 
 const App = () => {
   return (
