@@ -16,8 +16,10 @@ class StreamList extends React.Component {
                     <Link to={`/stream/edit/${stream.id}`} className="ui button primary">
                     edit
                     </Link>
-                  
-                    <button className="ui button negative">delete</button>
+                    <Link to={`/stream/delete/${stream.id}`} className="ui button negative">
+                    Delete
+                    </Link>
+                    {/* <button className="ui button negative">delete</button> */}
                 </div>
 
             )
